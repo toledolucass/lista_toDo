@@ -1,46 +1,48 @@
 function addTask(){
-
-    //Pego o valor do input
-    let inputValue = document.querySelector(".input").value;
+    //3. Pego o valor do input.
+    let inputValue =  document.querySelector(".input").value;
 
     if(inputValue){
-
-        //Pega e clona o <li>
-        const li = document.querySelector(".template")
+        //4. Pego e clono o li
+        const li = document.querySelector(".template");
         const template = li.cloneNode(true);
 
-        //seleciona o <li> e adiciona o valor do input ao título do span
+        //5 Dentro do li eu seleciono o span e coloco o seu textContent com o valor do input
         template.querySelector(".task-title").innerHTML = inputValue;
 
-        template.classList.remove("hide");
-
-        //Pega a <ul> e adiciona a <li> nela
+        //6. Pego a ul e adiciono a li
         const list = document.querySelector(".list");
-        list.appendChild(template);
+        list.prepend(template);
 
-        //Limpar input
+        //7. Removo o valor de input
         document.querySelector(".input").value = "";
 
+        //8. Removo a classe que esconde o display
+        template.classList.remove("hide");
 
-        //remover tarefa
+
+
+        //10. Aqui na função chega como parâmetro o pai do botão e a função remove o pai dele, no caso o li.
         function removeTask(task){
-            task.parentNode.remove()
+            task.parentNode.remove();
         }
 
+        //9. Seleciono o botão de remover, adiciono um evento de click pra acionar a função de remover tarefa
         template.querySelector(".remove-btn").addEventListener("click", function(){
+            //A função "seleciona"/remove (tem como parâmetro) o pai do botão
+            //Usa-se o this, porque como será adicionado um novo li, não seria possível selecionar uma classe sua antes, então é usado o this como "referência" 
             removeTask(this.parentNode);
         })
 
 
-        //Concluir tarefa
+
         function completeTask(task){
-            task.parentNode.classList.toggle("done")
+            task.parentNode.classList.toggle("done");
+            
             if(task.parentNode.classList.contains("done")){
-                const list = document.querySelector(".list");
-                list.appendChild(task.parentNode);
+                list.appendChild(template);
             }else{
-                firstElement = document.querySelector(".task-item-box");
-                list.insertBefore(task.parentNode, firstElement);
+                list.insertBefore(task.parentNode, li);
             }
         }
 
@@ -48,15 +50,17 @@ function addTask(){
             completeTask(this.parentNode);
         })
 
-    }
 
+        
+    }
+    
 }
 
-const addBtn =  document.querySelector("#add-btn");
+//1. Pego o botão.
+const addBtn = document.querySelector("#add-btn");
 
+//2. Adiciono evento pra quando o botão for clicado chamar a função de add tarefa.
 addBtn.addEventListener("click", function(e){
-    
     e.preventDefault();
     addTask();
-
 })
