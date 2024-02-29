@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital@0;1&display=swap');
+
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+.container{
+  margin-top: 5em;
+}
+
+h1{
+  text-align: center;
+  margin-top: 5%;
+  font-family: "Overpass", sans-serif;
+}
+
+
+.form{
+  display: flex;
+  width: 40%;
+  margin: 2% auto 0;
+}
+
+.input{
+  flex: 1;
+  border: 1.7px solid black;
+  border-radius: 15px;
+  padding: 11px 15px;
+}
+
+#add-btn{
+  font-size: 1.2rem;
+  border-radius: 100%; 
+  border: 1px solid #000000; 
+  background-color: white;
+  width: 40px; 
+  height: 40px; 
+  margin-left: 2%;
+}
+
+#add-btn:hover{
+  background-color: rgb(0, 75, 0);
+  color: white;
+  transition: 500ms;
+  cursor: pointer;
+}
+
+
+
+.list-box{
+  width: 40%;
+  margin: 5% auto 0;
+}
+
+h2{
+  font-family: "Overpass", sans-serif;
+  text-align: center;
+}
+
+.task-item-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  border-bottom: 1px solid black;
+  margin-top: 7%;
+  padding: 10px 15px;
+}
+
+
+.task-title{
+  font-size: 1.3em;
+  font-family: "Overpass", sans-serif;
+  font-weight: bold;
+}
+
+.done-btn{
+  border-radius: 30%;
+  padding: 5px;
+  margin-right: 10px;
+  font-size: 1.5em;
+}
+
+.done-btn:hover{
+  color: white;
+  background-color: rgb(0, 75, 0);
+  transition: 500ms;
+}
+
+.remove-btn{
+  border-radius: 30%;
+  padding: 5px;
+  font-size: 1.5em;
+}
+
+.remove-btn:hover{
+  color: white;
+  background-color: rgb(75, 0, 0);
+  transition: 500ms;
+}
+
+
+.hide{
+  display: none;
+}
+
+.done{
+  border-color: rgb(0, 75, 0);
+  background-color: rgb(0, 75, 0, 0.5);;
+  color: white;
+  border-radius: 30px;
+  transition: 500ms;
+}

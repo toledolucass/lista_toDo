@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefas</title>
+
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="js/scripts.js" defer></script>
+  </head>
+  <body>
+    
+    <section>
+      <h1>Adicionar Tarefas</h1>
+      <form action="#" class="form">
+        <input type="text" placeholder="Adicionar tarefa" class="input">
+        <button type="submit" id="add-btn">+</button>
+      </form>
+    </section>
+
+    <section class="list-box">
+      <h2>Suas Tarefas:</h2>
+      <ul class="list">
+
+        <li class="task-item-box hide template">
+          <span class="task-title">Teste</span>
+          <div class="icons">
+            <ion-icon name="checkmark-sharp" class="done-btn"></ion-icon>
+            <ion-icon name="close-sharp" class="remove-btn"></ion-icon>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  </body>
+
+</html>
